@@ -1,0 +1,22 @@
+{
+  "agentMode": "command",
+  "agentPromptFile": "program.md",
+  "agentPrompt": "Improve the benchmark metric while preserving correctness, test behavior, and safety.",
+  "agentCommand": "./scripts/agent-step.sh",
+  "backendAgent": "codex",
+  "backendModel": "gpt-5",
+  "backendMaxIterations": 3,
+  "benchmarkCommand": "./scripts/benchmark.sh",
+  "metricRegex": "score=([0-9.]+)",
+  "direction": "min",
+  "iterations": 200,
+  "finalReportPath": ".autoresearcher/reports/final-report-{run_id}.md",
+  "researchReportPath": "RESEARCH.md",
+  "autoCommit": false,
+  "onRejectCommand": "",
+  "onKeepCommand": "",
+  "onCompleteCommand": "",
+  "stopOnAgentFailure": true,
+  "streamAgentOutput": true,
+  "commitMessageTemplate": "research: improved metric to {metric} (iter {iteration})"
+}

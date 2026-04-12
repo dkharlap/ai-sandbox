@@ -1,0 +1,8 @@
+---
+Numeric features: ['OverallQual', 'LogGrLivArea', 'LogTotalBsmtSF', 'GarageCars', 'YearBuilt', 'LogLotArea', 'OverallCond', 'Fireplaces']
+Categorical features: ['BsmtQual', 'SaleType', 'Neighborhood', 'KitchenQual', 'BsmtExposure', 'BsmtFinType1', 'BldgType']
+Low quality train rows: 1974
+High quality train rows: 370
+Target transform: log1p(SalePrice) with regime-specific smearing correction
+rmse:   22134.936
+r2: 0.849

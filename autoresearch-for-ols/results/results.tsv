@@ -1,0 +1,95 @@
+rmse	r2	status	description
+52878.678	0.632	keep	current baseline from present train.py using OverallQual only
+46681.885	0.697	keep	add MSZoning BsmtQual Condition1 and SaleType dummies to OverallQual baseline
+35219.422	0.820	keep	add GrLivArea TotalBsmtSF garage and year numerics with train-only imputation
+33284.267	0.844	keep	add Neighborhood dummies on top of expanded numeric and categorical baseline
+32273.071	0.856	keep	add KitchenQual ExterQual HeatingQC and CentralAir categoricals
+32027.255	0.860	discard	add TotalBath HouseAge and RemodAge engineered numerics
+34443.996	0.871	discard	switch kept expanded feature set to log target
+31174.080	0.868	keep	add LotArea LotFrontage OverallCond and Fireplaces numerics
+31094.271	0.871	discard	add HouseStyle Foundation GarageFinish and PavedDrive categoricals
+30827.890	0.874	discard	add OverallQual square and OverallQual by GrLivArea interaction
+31675.082	0.901	discard	trim top 1 percent train-only outliers in GrLivArea LotArea and SalePrice
+31314.844	0.869	discard	add 1stFlrSF 2ndFlrSF TotRmsAbvGrd and BedroomAbvGr numerics
+31289.520	0.869	discard	add SaleCondition categorical
+31250.763	0.869	discard	add MasVnrArea FullBath and TotRmsAbvGrd numerics
+30518.057	0.878	keep	add BsmtExposure and BsmtFinType1 categoricals
+30749.138	0.881	discard	add Exterior1st categorical
+30616.148	0.881	discard	add WoodDeckSF OpenPorchSF and ScreenPorch numerics
+30427.868	0.879	discard	add Condition2 categorical
+30531.405	0.880	discard	add Functional categorical
+29716.754	0.885	keep	add BldgType categorical
+29489.751	0.885	discard	add BsmtFinSF1 numeric
+29665.095	0.886	discard	add GarageType categorical
+29716.754	0.885	keep	recover expanded numeric and categorical OLS baseline from reset state
+29452.254	0.886	discard	add BsmtFinSF1 and GarageType to recovered baseline
+1071035.366	0.933	discard	replace selected categoricals with all categorical columns
+32899.773	0.896	discard	log target with recovered baseline feature set
+29591.374	0.887	discard	add TotalBath age porch and TotalSF engineered numerics
+30333.432	0.880	discard	train-only p-value prune at 0.10 on encoded baseline
+29911.549	0.883	discard	train-only p-value prune at 0.25 on encoded baseline
+32540.009	0.869	discard	replace ordered categorical dummies with ordinal score encodings
+29930.539	0.890	discard	add SaleCondition Functional Foundation Electrical and Exterior1st
+30062.412	0.882	discard	replace major area numerics with log1p transforms
+29806.958	0.890	discard	add OverallQual interactions with living basement and garage area
+29690.522	0.883	keep	drop MSZoning Condition1 CentralAir and GarageArea from recovered baseline
+29806.633	0.880	discard	further drop SaleType HeatingQC LotFrontage and YearRemod/Add
+29684.507	0.883	discard	add Foundation to simplified kept baseline
+29487.672	0.883	discard	add BsmtFinSF1 to simplified kept baseline
+29631.013	0.884	discard	add GarageType to simplified kept baseline
+29480.072	0.884	discard	add TotalBath to simplified kept baseline
+29736.840	0.883	discard	add HouseAge to simplified kept baseline
+29695.133	0.938	discard	remove train rows with Cooks distance above 4 divided by n
+29573.649	0.914	discard	remove top 5 train rows by Cooks distance
+29579.702	0.917	discard	remove top 10 train rows by Cooks distance
+29602.944	0.921	discard	remove top 20 train rows by Cooks distance
+0.000000	0.000	crash	remove extreme external studentized residual rows timed out
+29414.577	0.898	discard	remove top 3 train rows by Cooks distance
+29699.908	0.882	discard	remove rows with both top 0.5 percent leverage and Cooks distance
+29573.649	0.915	discard	remove top 3 train rows by Cooks distance times absolute residual
+29690.522	0.883	discard	remove top 2 train rows by Cooks distance
+29690.195	0.913	discard	remove top 4 train rows by Cooks distance
+28337.067	0.832	keep	split OLS into low and high quality regimes using OverallQual at least 7
+28407.362	0.832	discard	add residual stacking with targeted nonlinear correction features on top of regime split
+28234.834	0.828	discard	add rare-level collapsing and neighborhood target-mean signal on top of regime split
+26305.883	0.827	keep	use log1p SalePrice with regime-specific smearing correction on split OLS
+26802.871	0.824	discard	drop SaleType from log-target regime-split model
+26272.967	0.822	keep	drop HeatingQC from log-target regime-split model
+26207.012	0.820	keep	drop ExterQual from simplified log-target regime-split model
+26043.483	0.819	keep	drop LotFrontage from simplified log-target regime-split model
+26175.537	0.818	discard	drop YearRemod/Add from further simplified log-target regime-split model
+32367.180	0.884	keep	switch from regime-split log-target model to single log-target OLS model
+23959.299	0.821	keep	move regime split from OverallQual at least 7 to at least 8
+23857.354	0.823	discard	add NoBasement NoGarage and NoFireplace indicators to threshold 8 split
+23859.168	0.817	discard	collapse rare Neighborhood and SaleType levels under threshold 8 split
+23658.027	0.824	keep	replace LotArea with log1p LotArea under threshold 8 split
+23212.971	0.833	keep	also replace GrLivArea with log1p GrLivArea under threshold 8 split
+22906.998	0.836	keep	also replace TotalBsmtSF with log1p TotalBsmtSF under threshold 8 split
+27556.070	0.826	discard	move transformed-feature regime split from OverallQual at least 8 to at least 9
+22810.752	0.838	discard	add OverallQual squared to transformed-feature threshold 8 split
+22799.512	0.814	discard	use three quality regimes with transformed-feature model
+22656.877	0.837	discard	add premium neighborhood and high-quality living area interactions
+23001.519	0.832	discard	prune weak columns only in the high-quality regime
+81455.137	0.887	discard	split transformed-feature model by premium neighborhoods instead of quality
+22558.603	0.815	discard	combine three quality regimes with premium neighborhood and high-quality interactions
+22630.460	0.818	discard	add OverallQual squared on top of combined three-regime interaction model
+24742.799	0.863	discard	replace all three logged size predictors with cubic spline bases
+22243.160	0.847	keep	replace LogGrLivArea with a cubic spline basis under threshold 8 split
+24512.292	0.863	discard	also replace LogTotalBsmtSF with a cubic spline basis
+22623.903	0.843	discard	replace YearBuilt with log-transformed house age
+22256.094	0.847	discard	replace KitchenQual dummies with an ordinal KitchenQual score
+22500.975	0.846	discard	reduce LogGrLivArea spline from 4 basis columns to 3
+22495.813	0.845	discard	drop SaleType from spline regime model
+22337.887	0.846	discard	drop BldgType from spline regime model
+22485.254	0.844	discard	drop BsmtExposure from spline regime model
+22242.087	0.847	keep	drop YearRemod/Add from spline regime model
+22418.683	0.844	discard	drop Fireplaces from simplified spline regime model
+22143.350	0.849	keep	regime-specific 99th percentile winsorization of LogTotalBsmtSF and LogLotArea
+22143.360	0.849	discard	remove top 1 Cooks-distance row inside each regime after winsorization
+22156.408	0.849	discard	high-regime-only winsorization of LogTotalBsmtSF and LogLotArea
+22443.633	0.851	discard	add regime-specific HugeLot and HugeBasement flags on top of winsorization
+22629.111	0.843	discard	also winsorize LogGrLivArea before building the spline
+22134.936	0.849	keep	use a tighter 98.5 percentile cap for LogLotArea while keeping 99 percentile for LogTotalBsmtSF
+22266.396	0.849	discard	use plain LogGrLivArea in the low regime and the spline only in the high regime
+22316.613	0.839	discard	drop BsmtFinType1 from winsorized spline regime model
+22225.884	0.848	discard	drop BldgType from winsorized spline regime model
