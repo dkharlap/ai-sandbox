@@ -25,7 +25,7 @@ Turns out, pretty far. In just a few hours I ran roughly **100 experiments**, mo
 | Metric | Value | vs. Human Model |
 |--------|-------|-----------------|
 | Adj. R² | ~0.846 | — |
-| Test R² | ~0.950 | ↑ |
+| Test R² | ~0.950 | **~6% better** |
 | RMSE | ~19,146 | **~28% better** |
 
 The methodology stayed OLS throughout, but the resulting code ended up roughly **2–3× more complex** than the hand-crafted version — still totally readable and maintainable, just a lot more going on under the hood.
