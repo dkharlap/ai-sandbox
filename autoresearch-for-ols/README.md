@@ -2,9 +2,9 @@
 
 ## Background
 
-As part of a talented cohort in the **Statistics for Data Science** course at the **University of Waterloo**, our group tackled the [Ames Housing Dataset](https://www.kaggle.com/datasets/shashanknecrothapa/ames-housing-dataset) from Kaggle.
+As part of an extremely talented cohort in the **Statistics for Data Science** course at the **University of Waterloo**, our group tackled the [Ames Housing Dataset](https://www.kaggle.com/datasets/shashanknecrothapa/ames-housing-dataset) from Kaggle.
 
-For our group assignment, we focused on **Ordinary Least Squares (OLS)** regression to predict house prices. Four team members each built their own models, experimenting with different input variables, feature engineering, and transformations. Our best result — achieved through combined iteration — was:
+For our group assignment, we focused on **Ordinary Least Squares (OLS)** regression to predict house prices. Four team members each built their own models, experimenting with different input variables, feature engineering, and transformations. Our best result, achieved through combined iteration, was:
 
 | Metric | Value |
 |--------|-------|
@@ -18,7 +18,7 @@ This model used just **4 variables** and stayed simple and interpretable.
 
 ## The Autoresearch Experiment
 
-After grinding through many manual iterations, I got curious — how far could the model be pushed *automatically* using [Andrej Karpathy's Autoresearch](https://github.com/karpathy/autoresearch)?
+After grinding through many manual iterations, I got curious: how far could the model be pushed *automatically* using [Andrej Karpathy's Autoresearch](https://github.com/karpathy/autoresearch)?
 
 Turns out, pretty far. In just a few hours I ran roughly **100 experiments**, most of them suggested by the agentic AI (OpenAI Codex), with occasional nudges from me. The best model came out at:
 
@@ -34,7 +34,7 @@ The methodology stayed OLS throughout, but the resulting code ended up roughly *
 
 ## Try It Yourself
 
-1. Follow the setup guide in [Andrej Karpathy's Autoresearch repo](https://github.com/karpathy/autoresearch) — it's quick and painless.
+1. Follow the setup guide in [Andrej Karpathy's Autoresearch repo](https://github.com/karpathy/autoresearch) - it's quick and painless.
 2. Once you're set up, kick things off with:
 
 ```
