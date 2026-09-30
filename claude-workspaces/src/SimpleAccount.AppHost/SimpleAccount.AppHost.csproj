@@ -1,0 +1,23 @@
+<Project Sdk="Aspire.AppHost.Sdk/13.5.4">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AspireUseCliBundle>true</AspireUseCliBundle>
+    <UserSecretsId>6cbc728f-2437-40de-8692-44496273bfe5</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspire.Hosting.JavaScript" />
+    <PackageReference Include="Aspire.Hosting.PostgreSQL" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SimpleAccount.Gateway\SimpleAccount.Gateway.csproj" />
+    <ProjectReference Include="..\SimpleAccount.Account\SimpleAccount.Account.csproj" />
+    <ProjectReference Include="..\SimpleAccount.Preferences\SimpleAccount.Preferences.csproj" />
+  </ItemGroup>
+
+</Project>

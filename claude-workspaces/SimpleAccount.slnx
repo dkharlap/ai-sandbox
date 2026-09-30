@@ -1,0 +1,15 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/SimpleAccount.Account/SimpleAccount.Account.csproj" />
+    <Project Path="src/SimpleAccount.AppHost/SimpleAccount.AppHost.csproj" />
+    <Project Path="src/SimpleAccount.Contracts/SimpleAccount.Contracts.csproj" />
+    <Project Path="src/SimpleAccount.Gateway/SimpleAccount.Gateway.csproj" />
+    <Project Path="src/SimpleAccount.Preferences/SimpleAccount.Preferences.csproj" />
+    <Project Path="src/SimpleAccount.ServiceDefaults/SimpleAccount.ServiceDefaults.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/SimpleAccount.Account.Tests/SimpleAccount.Account.Tests.csproj" />
+    <Project Path="tests/SimpleAccount.Integration.Tests/SimpleAccount.Integration.Tests.csproj" />
+    <Project Path="tests/SimpleAccount.Preferences.Tests/SimpleAccount.Preferences.Tests.csproj" />
+  </Folder>
+</Solution>

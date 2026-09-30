@@ -1,0 +1,93 @@
+:root {
+  --bg: #fbfbfd;
+  --surface: #ffffff;
+  --border: #e3e3e8;
+  --text: #1d1d20;
+  --muted: #6b6b76;
+  --accent: #3b5bdb;
+  --error: #c92a2a;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #131316;
+    --surface: #1c1c21;
+    --border: #2e2e36;
+    --text: #ececf1;
+    --muted: #9b9ba6;
+    --accent: #748ffc;
+    --error: #ff8787;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+main {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+}
+
+h1 { font-size: 1.5rem; }
+h2 { font-size: 1.05rem; margin: 0 0 1rem; }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.muted { color: var(--muted); }
+.error { color: var(--error); }
+
+.account { display: grid; grid-template-columns: 7rem 1fr; gap: .4rem 1rem; margin: 0 0 1rem; }
+.account dt { color: var(--muted); }
+.account dd { margin: 0; }
+
+.prefs { list-style: none; margin: 0 0 1.25rem; padding: 0; }
+.prefs li {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  padding: .6rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.prefs li:last-child { border-bottom: 0; }
+.rank { width: 1.5rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.name { flex: 1; display: flex; flex-direction: column; }
+.name small { color: var(--muted); }
+.actions { display: flex; gap: .35rem; }
+
+button, .button {
+  font: inherit;
+  padding: .4rem .7rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+button:hover:not(:disabled), .button:hover { border-color: var(--accent); }
+button:disabled { opacity: .45; cursor: default; }
+
+.signed-out .button { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+.add-model { display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; }
+.add-model select { font: inherit; padding: .4rem; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); color: var(--text); }
+
+@media (max-width: 480px) {
+  .prefs li { flex-wrap: wrap; }
+  .account { grid-template-columns: 1fr; }
+}

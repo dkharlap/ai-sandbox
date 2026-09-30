@@ -1,0 +1,4 @@
+# esbuild ships a prebuilt binary via a postinstall script. pnpm 12 blocks build scripts
+# unless approved here, and the non-zero exit would fail Aspire's pnpm-install step.
+allowBuilds:
+  esbuild: true

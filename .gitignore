@@ -2,3 +2,11 @@
 autoresearch-for-ols/__pycache__/
 
 autoresearch-for-ols/.DS_Store
+
+# Claude Code: git worktrees live in .claude/worktrees/ and would otherwise
+# show as untracked noise in the main checkout.
+.claude/
+
+autoresearch-for-ols/results/.DS_Store
+
+.DS_Store
